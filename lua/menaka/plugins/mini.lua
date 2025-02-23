@@ -17,7 +17,28 @@ return {
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
 
-      require('mini.move').setup({})
+      require('mini.move').setup({
+        -- Module mappings. Use `''` (empty string) to disable one.
+        mappings = {
+          -- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.
+          left = '<C-l>',
+          right = '<C-h>',
+          down = '<C-j>',
+          up = '<C-k>',
+      
+          -- Move current line in Normal mode
+          line_left = '<C-l>',
+          line_right = '<C-h>',
+          line_down = '<C-j>',
+          line_up = '<C-k>',
+        },
+      
+        -- Options which control moving behavior
+        options = {
+          -- Automatically reindent selection during linewise vertical move
+          reindent_linewise = true,
+        },
+      })
 
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
